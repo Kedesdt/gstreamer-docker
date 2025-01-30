@@ -1,0 +1,12 @@
+OPu-l'OtWJ39'WKZb)K9
+
+
+gst-launch-1.0 srtserversrc keep-listening=true uri=srt://:10000 ! tee name=t ! queue ! srtsink uri=srt://:10001 t. ! fakesink
+
+>gst-launch-1.0 srtserversrc keep-listening=true uri=srt://:10000 ! tee name=t ! queue ! srtsink uri=srt://:10001 t. ! fakesink
+
+
+
+C:\Users\kdtorres>gst-launch-1.0 videotestsrc ! videoconvert ! x264enc ! mpegtsmux ! srtclientsink uri=srt://45.93.100.30:10000
+
+gst-launch-1.0 srtclientsrc uri=srt://45.93.100.30:10001 ! decodebin ! autovideosink
