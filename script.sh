@@ -11,5 +11,5 @@ INPUT_PORT=$1
 OUTPUT_PORT=$2
 
 # Execute a pipeline GStreamer
-#gst-launch-1.0 srtserversrc keep-listening=true uri=srt://:$INPUT_PORT ! tee name=t ! queue ! srtsink uri=srt://:$OUTPUT_PORT t. ! fakesink
-gst-launch-1.0 videotestsrc ! videoconvert ! x264enc ! mpegtsmux ! srtserversink uri=srt://:10000
+gst-launch-1.0 srtserversrc keep-listening=true uri=srt://:$INPUT_PORT ! tee name=t ! queue ! srtsink uri=srt://:$OUTPUT_PORT t. ! fakesink
+#gst-launch-1.0 videotestsrc ! videoconvert ! x264enc ! mpegtsmux ! srtserversink uri=srt://:10000
